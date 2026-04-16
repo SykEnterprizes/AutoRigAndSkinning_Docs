@@ -1,4 +1,4 @@
-# Auto-Rigging and Skinning Tools within the Sky Mesh Surgery Toolkit Plugin (UE5)
+# Auto-Rigging and Skinning Tools within the Syk Mesh Surgery Toolkit Plugin (UE5)
 
 ## Overview
 
