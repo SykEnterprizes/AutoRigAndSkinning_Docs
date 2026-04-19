@@ -61,7 +61,7 @@ Markers are draggable objects placed in the viewport that define where key anato
 
 Once you are happy with your marker positions, click the **Initialize** button in the rigging panel.
 
-![Initialize](../Images/Initialize-Reskin.jpg)
+![Initialize](../Images/Initiate-Reskin.jpg)
 
 A Save Folder selection dialog will pop-up - choose an output folder for the mesh.
 
@@ -105,7 +105,7 @@ This heat map view gives you immediate visual feedback without needing to leave 
 
 If you adjust any capsule handles after reviewing the heat map, click **Re-Skin** in the rigging panel. UAutoRigger will recompute the skin weights based on the updated capsule positions and refresh the heat map display.
 
-![Reskin](../Images/Initialize-Reskin.jpg)
+![Reskin](../Images/Initiate-Reskin.jpg)
 
 Repeat the adjust → re-skin → review cycle until you are happy with the weight distribution across the mesh.
 
