@@ -59,7 +59,7 @@ Markers are draggable objects placed in the viewport that define where key anato
 
 ## Step 4 — Initialize the Rig
 
-Once you are happy with your marker positions, click the **Initialize** button in the rigging panel.
+Once you are happy with your marker positions, click the **Initiate** button in the rigging panel.
 
 ![Initialize](../Images/Initiate-Reskin.jpg)
 
