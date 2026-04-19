@@ -5,7 +5,7 @@
 An **editor-only Unreal Engine 5 tool** for **Auto-Rigging and Skin Weighting Static Meshes**
 using standard UE4 and UE5 Metahuman skeletons.
 
-Designed for small studios and solo developers to quickly prototype and iterate on character meshes — taking a static mesh from nothing to a rigged, skinned skeletal mesh in **around 20 minutes**.
+Designed for small studios and solo developers to quickly prototype and iterate on character meshes — converting a static mesh, to a rigged, skinned skeletal mesh in **around 20 minutes**.
 
 ---
 
