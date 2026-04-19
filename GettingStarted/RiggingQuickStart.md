@@ -13,13 +13,17 @@ This guide walks you through the complete process of rigging and skinning a huma
 
 ## Step 1 — Open the AutoRigger Editor Utility
 
-In the Content Browser, locate the **UAutoRigger** editor utility and double-click to open it. This launches the rigging panel inside the Unreal editor.
+In the Content Browser, locate the **UAutoRigger** editor utility and right-click and select **Run Editor Utility** to open it. This launches the rigging panel inside the Unreal editor.
+
+![Open AutoRigger Tool](../Images/WBP_Location.jpg)
 
 ---
 
 ## Step 2 — Select Your Static Mesh
 
 In the rigging panel, use the mesh picker to select the static mesh you want to rig. Once selected, UAutoRigger will automatically spawn an instance of that mesh in the current level, attached to a **Markup Actor**.
+
+![Choose Static Mesh](../Images/Step1.jpg)
 
 > The Markup Actor is your workspace for the rigging session. All marker placement and rig preview happens through this actor.
 
@@ -28,6 +32,8 @@ In the rigging panel, use the mesh picker to select the static mesh you want to 
 ## Step 3 — Place Your Markers
 
 Markers are draggable objects placed in the viewport that define where key anatomical landmarks are on your mesh. Lines connecting the markers are drawn in the viewport to give you a live preview of the skeleton being defined.
+
+![Set Markers](../Images/Step2.jpg)
 
 **To place markers:**
 
@@ -43,11 +49,11 @@ Markers are draggable objects placed in the viewport that define where key anato
 | Spine markers | Along the centreline of the back |
 | Shoulders | At the shoulder joint, not the edge of the mesh |
 | Elbows / Knees | At the actual joint pivot point |
-| Wrists / Ankles | Just above the hand / foot |
-| Head | Centre of the skull |
+| Wrists / Ankles | At the actual joint pivot point |
+| Head | Base of the skull |
 | Finger tips & knuckles | At each joint along each finger |
 
-> **Tip:** Take your time with marker placement — the quality of your rig and skin weights depends directly on how accurately the markers match your mesh's anatomy.
+> **Tip:** Take your time with marker placement — the quality of your rig and skin weights depends directly on how accurately the markers match your mesh's anatomy.  Use Front, Right etc views to assist
 
 ---
 
@@ -55,7 +61,13 @@ Markers are draggable objects placed in the viewport that define where key anato
 
 Once you are happy with your marker positions, click the **Initialize** button in the rigging panel.
 
+A Save Folder selection dialog will pop-up - choose an output folder for the mesh.
+
+![Set Output folder](../Images/ChooseSaveFolder.jpg)
+
 UAutoRigger will process your marker positions and compute the rig. When complete, a set of **Capsule Rig Handles** will spawn in the viewport around your mesh. These capsules represent the influence volumes that drive skin weight calculation for each bone.
+
+![Adjust Influence Volumes](../Images/Step3.jpg)
 
 ---
 
@@ -64,6 +76,8 @@ UAutoRigger will process your marker positions and compute the rig. When complet
 The capsule handles are fully interactive. You can move, rotate, and resize them in the viewport to better fit the mesh geometry.
 
 Getting the capsules to closely wrap the mesh surface will produce cleaner skin weights, particularly around the shoulders, hips, and neck where geometry is more complex.
+
+![Adjust Capsule Handles](../Images/Step5.jpg)
 
 > **Tip:** Capsules do not need to be a perfect fit — a reasonable approximation is enough for good results. You will be able to refine weights manually in the next step.
 
@@ -77,7 +91,11 @@ Before committing to the skin weights, you can inspect how each bone influences 
 2. The mesh material in the viewport will update to show a **heat map** of that bone's influence — red indicates strong influence, blue indicates weak or no influence
 3. If the influence looks wrong for a bone, go back and adjust its capsule handle and check again
 
+![View Heatmap](../Images/Step4.jpg)
+
 This heat map view gives you immediate visual feedback without needing to leave Unreal or open an external DCC tool.
+
+![View Heatmap](../Images/Step6.jpg)
 
 ---
 
@@ -87,15 +105,13 @@ If you adjust any capsule handles after reviewing the heat map, click **Re-Skin*
 
 Repeat the adjust → re-skin → review cycle until you are happy with the weight distribution across the mesh.
 
+![Re-Skin and View Results](../Images/Step7.jpg)
+
 ---
 
 ## Step 8 — Save the Skinned Mesh
 
 Once you are satisfied with the skin weights:
-
-1. Click **Save** in the rigging panel
-2. Choose a destination in your Content Browser for the output skeletal mesh asset
-3. UAutoRigger will write the final rigged and skinned skeletal mesh to that location
 
 Your skeletal mesh is now ready to use — it can be animated, used with Unreal's weight painting tools for further refinement, or exported for use in other tools.
 
