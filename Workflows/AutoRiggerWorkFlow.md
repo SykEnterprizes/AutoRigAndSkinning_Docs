@@ -1,70 +1,135 @@
-# Auto-Rigging and Skinning Tools within the Sky Mesh Surgery Toolkit Plugin (UE5)
+# Quick Start: Auto Rigging & Skinning
 
-## Overview
-
-An **editor-only Unreal Engine 5 tool** for **Auto-Rigging and Skin Weighting Static Meshes**
-using standard UE4 and UE5 Metahuman skeletons.
-
-Designed for small studios and solo developers to quickly prototype and iterate on character meshes — taking a static mesh from nothing to a rigged, skinned skeletal mesh in **around 20 minutes**.
+This guide walks you through the complete process of rigging and skinning a humanoid static mesh using UAutoRigger — from opening the tool to saving your finished skeletal mesh. No prior rigging experience required.
 
 ---
 
-## What This Does
+## What You Will Need
 
-- Allows a user to select any humanoid static mesh and rig it with a UE4 or UE5 format skeleton, including optional twist, corrective root, and IK bones
-- Allows a user to easily add skin weights and iterate quickly to adjust deformation using visual feedback tools
-
-> **Editor-time only by design** — no runtime mesh rigging or skinning is available.
+- A humanoid static mesh imported into your Unreal Engine project
+- UAutoRigger plugin enabled (see [Installation](Installation.md))
 
 ---
 
-## Key Features
+## Step 1 — Open the AutoRigger Editor Utility
 
-- Full UE4 and UE5 skeletons including twist and IK bones
-- Simple UE4 and UE5 skeleton variants for lightweight use cases
-- Adjustable skin weights with user-friendly capsule handles and visual heatmap feedback
-- Easy bone placement with full user control over marker positions
-- Left-to-right mirroring — only work on one side and mirror across
-- No runtime or editor-only dependencies shipped with your project
-- Tested and developed against **UE 5.0.3+**
+In the Content Browser, locate the **UAutoRigger** editor utility and right-click and select **Run Editor Utility** to open it. This launches the rigging panel inside the Unreal editor.
+
+![Open AutoRigger Tool](../Images/WBP_Location.jpg)
 
 ---
 
-## Demo Videos
+## Step 2 — Select Your Static Mesh
 
-▶ YouTube link here
+In the rigging panel, use the mesh picker to select the static mesh you want to rig. Once selected, UAutoRigger will automatically spawn an instance of that mesh in the current level, attached to a **Markup Actor**.
 
----
+![Choose Static Mesh](../Images/Step1.jpg)
 
-## Quick Start
-
-1. Enable the plugin
-2. Open **WBP_AutoRigger**
-3. Select a source static mesh
-4. Position the bone markers to match your mesh's anatomy
-5. Click **Initialize** to compute the rig
-6. Adjust the capsule handles using heatmap feedback for each bone
-7. Click **Re-Skin** to apply and test the updated weights on the mesh
-8. Save the output skeletal mesh asset
-
-See the full [Rigging Quick Start Guide](GettingStarted/RiggingQuickStart.md) for detailed steps.
+> The Markup Actor is your workspace for the rigging session. All marker placement and rig preview happens through this actor.
 
 ---
 
-## Requirements
+## Step 3 — Place Your Markers
 
-- Unreal Engine **5.0.3 and above**
-- Editor-only usage
+Markers are draggable objects placed in the viewport that define where key anatomical landmarks are on your mesh. Lines connecting the markers are drawn in the viewport to give you a live preview of the skeleton being defined.
+
+![Set Markers](../Images/Step2.jpg)
+
+**To place markers:**
+
+1. In the viewport, locate the marker handles that have spawned around the mesh
+2. Click and drag each marker to the correct position on the mesh — for example, drag the head marker to the top of the skull, the hip marker to the pelvis centre, and so on
+3. Use the connecting debug lines as a guide — they should roughly follow the spine, limbs, and joints of your character
+
+**Key markers to position carefully:**
+
+| Marker | Placement guidance |
+|---|---|
+| Root / Hips | Centre of the pelvis |
+| Spine markers | Along the centreline of the back |
+| Shoulders | At the shoulder joint, not the edge of the mesh |
+| Elbows / Knees | At the actual joint pivot point |
+| Wrists / Ankles | At the actual joint pivot point |
+| Head | Base of the skull |
+| Finger tips & knuckles | At each joint along each finger |
+
+> **Tip:** Take your time with marker placement — the quality of your rig and skin weights depends directly on how accurately the markers match your mesh's anatomy.  Use Front, Right etc views to assist
 
 ---
 
-## Known Limitations
+## Step 4 — Initialize the Rig
 
-- Initialized meshes are close to prototype-ready but will typically need some weight adjustment in complex areas such as shoulders and neck
-- Source mesh must be humanoid, or otherwise suitable for the UE4 or UE5 skeleton convention layout
+Once you are happy with your marker positions, click the **Initiate** button in the rigging panel.
+
+![Initialize](../Images/Initiate-Reskin.jpg)
+
+A Save Folder selection dialog will pop-up - choose an output folder for the mesh.
+
+![Set Output folder](../Images/ChooseSaveFolder.jpg)
+
+UAutoRigger will process your marker positions and compute the rig. When complete, a set of **Capsule Rig Handles** will spawn in the viewport around your mesh. These capsules represent the influence volumes that drive skin weight calculation for each bone.
+
+![Adjust Influence Volumes](../Images/Step3.jpg)
 
 ---
 
-## Status
+## Step 5 — Adjust the Capsule Handles
 
-Actively maintained — new skeleton features, UI improvements, and additional skeleton formats are planned for upcoming releases.
+The capsule handles are fully interactive. You can move, rotate, and resize them in the viewport to better fit the mesh geometry.
+
+Getting the capsules to closely wrap the mesh surface will produce cleaner skin weights, particularly around the shoulders, hips, and neck where geometry is more complex.
+
+![Adjust Capsule Handles](../Images/Step5.jpg)
+
+> **Tip:** Capsules do not need to be a perfect fit — a reasonable approximation is enough for good results. You will be able to refine weights manually in the next step.
+
+---
+
+## Step 6 — Preview Bone Influences
+
+Before committing to the skin weights, you can inspect how each bone influences the mesh:
+
+1. In the rigging panel, select one or more bones from the bone list
+2. The mesh material in the viewport will update to show a **heat map** of that bone's influence — red indicates strong influence, blue indicates weak or no influence
+3. If the influence looks wrong for a bone, go back and adjust its capsule handle and check again
+
+![View Heatmap](../Images/Step4.jpg)
+
+This heat map view gives you immediate visual feedback without needing to leave Unreal or open an external DCC tool.
+
+![View Heatmap](../Images/Step6.jpg)
+
+---
+
+## Step 7 — Re-Skin and Iterate
+
+If you adjust any capsule handles after reviewing the heat map, click **Re-Skin** in the rigging panel. UAutoRigger will recompute the skin weights based on the updated capsule positions and refresh the heat map display.
+
+![Reskin](../Images/Initiate-Reskin.jpg)
+
+Find the AutoRig Actor in the Level, select the Skeletal Mesh Component and view its Skeletal Mesh
+
+![Reskin](../Images/SelectAutoRigActor.jpg)
+
+![Reskin](../Images/FindRiggedMesh.jpg)
+
+Repeat the adjust → re-skin → review cycle until you are happy with the weight distribution across the mesh.
+
+![Re-Skin and View Results](../Images/Step7.jpg)
+
+---
+
+## Step 8 — Save the Skinned Mesh
+
+Once you are satisfied with the skin weights:
+
+Your skeletal mesh is now ready to use — it can be animated, used with Unreal's weight painting tools for further refinement, or exported for use in other tools.
+
+---
+
+## Next Steps
+
+- [Auto Skinning — How It Works](AutoSkinning.md)
+- [Marker System Reference](MarkerSystem.md)
+- [Adjusting Skin Weights in UE5's Weight Painter](BoneWeightExtraction.md)
+- [Rigging Controls Reference](RigAndSkinControls.md)
