@@ -1,6 +1,8 @@
 
 # Rigging And Skinning UI Details
 
+![Menu Overview](../Images/WBP_AutoRigger.jpg)
+
 ## Initiate
 
 - Takes the input mesh and calculates approprate capsule radii for the skinning.  
