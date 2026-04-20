@@ -1,7 +1,7 @@
 # Bone Visualizer UI
 ---
 
-![Bone Visualizer](..Images/BoneVisualizer.jpg)
+![Bone Visualizer](../Images/BoneVisualizer.jpg)
 
 This UI allows the user to select which bones heatmap/influence will show, and/or merge with neighbouring bones
 on the Preview Mesh
