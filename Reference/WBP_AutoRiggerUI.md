@@ -36,8 +36,7 @@ Available Modes
 
 - Choose a Static Mesh to use as an Input
 
-@ -0,0 +1,22 @@
-# Skinning Quality Controls
+## Skinning Quality Controls
 
 These settings are available in the AutoRigger panel and control how skin weights are calculated and smoothed across the mesh. Adjusting these before hitting **Re-Skin** allows you to fine-tune deformation quality without manually painting weights.
 
