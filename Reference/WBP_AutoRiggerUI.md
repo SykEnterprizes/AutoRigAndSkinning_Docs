@@ -30,5 +30,12 @@ Available Modes
 ## Build Options
 
 - Template changes between UE4 default skeleton and UE5 default skeleton
-- Add Ik : True adds the extra IK bones, False leaves them out
-- 
+- Add Bones : True to add Stated bones - False to leave them out
+
+## Mesh
+
+- Choose a Static Mesh to use as an Input
+
+## Skinning Options
+
+- Blendzone Multiplier 
