@@ -58,3 +58,8 @@ For a standard humanoid character, the defaults are a reasonable starting point.
 - **Finger weights bleeding into the hand** — reduce Extremity Size
 - **Harsh weight boundaries visible on smooth surfaces** — increase Smoothing Passes or Smoothing Strength
 - **Influence boundaries too soft and losing definition** — reduce Smoothing Passes to 0 and rely on Falloff Sharpness instead
+
+## Bone Override Widgets
+
+- These populate with each bone associated with the particular group
+- Each bone in the group has adjustable Radii and HalfHeight values that will directly modify the corresponding CapsuleRigHandle
