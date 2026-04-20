@@ -17,5 +17,5 @@ Available Modes
 - Save and Load
 - Bone Visualizing
 
-[! Menu Overview](...Images/WBP_AutoRiggerUI.jpg)
+![Menu Overview](..Images\WBP_AutoRiggerUI.jpg)
 
