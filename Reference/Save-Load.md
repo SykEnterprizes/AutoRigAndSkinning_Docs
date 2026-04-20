@@ -1,8 +1,8 @@
 
 # Save/Load UI
--
+---
 
-![Save-Load](../Images/Save-Load.jpg)
+![Save-Load](../Images/SaveLoad.jpg)
 
 This UI allows the user to save and load Markup positions from the MarkupActor.
 Once markups are moved into the desired position, a save name may be entered into the field. 
