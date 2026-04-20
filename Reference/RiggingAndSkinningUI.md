@@ -47,5 +47,7 @@ For a standard humanoid character, the defaults are a reasonable starting point.
 
 ## Bone Override Widgets
 
+![Bone Overrides](../Images/Overrides.jpg)
+
 - These populate with each bone associated with the particular group
 - Each bone in the group has adjustable Radii and HalfHeight values that will directly modify the corresponding CapsuleRigHandle
