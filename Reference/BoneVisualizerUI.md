@@ -8,5 +8,7 @@ on the Preview Mesh
 
 Selecting a bone will show the heatmap color on the Preview Mesh, and deselecting it will hide it
 
+![Heatmap visual](../Images/Step6.jpg)
+
 The heatmap helps to make sure the Influence zone is covering/blending with the desired areas, and to make sure 
 there is full mesh coverage
