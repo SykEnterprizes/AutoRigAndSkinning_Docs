@@ -126,10 +126,11 @@ Once you are satisfied with the skin weights:
 Your skeletal mesh is now ready to use — it can be animated, used with Unreal's weight painting tools for further refinement, or exported for use in other tools.
 
 ---
-
+<!--
 ## Next Steps
 
 - [Auto Skinning — How It Works](AutoSkinning.md)
 - [Marker System Reference](MarkerSystem.md)
 - [Adjusting Skin Weights in UE5's Weight Painter](BoneWeightExtraction.md)
 - [Rigging Controls Reference](RigAndSkinControls.md)
+-->
