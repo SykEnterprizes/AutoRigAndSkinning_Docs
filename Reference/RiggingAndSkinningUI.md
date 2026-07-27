@@ -17,6 +17,7 @@
 
 - Template changes between UE4 default skeleton and UE5 default skeleton
 - Add Bones : True to add Stated bones - False to leave them out
+- Existing Skeleton is the skeleton we want to retarget/base the new Skeletal Mesh to for animation compatibility
 
 ## Mesh
 
