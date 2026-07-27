@@ -19,7 +19,12 @@ In the Content Browser, locate the **UAutoRigger** editor utility and right-clic
 
 ---
 
-## Step 2 — Select Your Static Mesh
+## Step 2 — Set BuildOptions and Static Mesh
+
+Select the desired build template and skeleton options in the BuildOptions
+If an Exisiting Skeleton is in the project with animations, setting that skeleton in the BuildOptions will allow the generated mesh to be directly compatible with it.  Leave blank to create a new skeleton
+
+![Choose Static Mesh](../Images/SetBuildOptions.jpg)
 
 In the rigging panel, use the mesh picker to select the static mesh you want to rig. Once selected, UAutoRigger will automatically spawn an instance of that mesh in the current level, attached to a **Markup Actor**.
 
