@@ -42,8 +42,8 @@ Markers are draggable objects placed in the viewport that define where key anato
 
 **To place markers:**
 
-1. In the viewport, locate the marker handles that have spawned around the mesh
-2. Click and drag each marker to the correct position on the mesh — for example, drag the head marker to the top of the skull, the hip marker to the pelvis centre, and so on
+1. Select the MarkupActor in the Level Outliner
+2. Select the desired marker from the details panel and drag each marker to the correct position on the mesh — for example, drag the head marker to the base of the skull, the hip marker to the pelvis centre, and so on
 3. Use the connecting debug lines as a guide — they should roughly follow the spine, limbs, and joints of your character
 
 **Key markers to position carefully:**
@@ -51,7 +51,7 @@ Markers are draggable objects placed in the viewport that define where key anato
 | Marker | Placement guidance |
 |---|---|
 | Root / Hips | Centre of the pelvis |
-| Spine markers | Along the centreline of the back |
+| Spine markers | Appropriately spaced through the torso |
 | Shoulders | At the shoulder joint, not the edge of the mesh |
 | Elbows / Knees | At the actual joint pivot point |
 | Wrists / Ankles | At the actual joint pivot point |
@@ -80,7 +80,8 @@ UAutoRigger will process your marker positions and compute the rig. When complet
 
 ## Step 5 — Adjust the Capsule Handles
 
-The capsule handles are fully interactive. You can move, rotate, and resize them in the viewport to better fit the mesh geometry.
+The capsule handles are fully interactive. You can move and rotate them in the viewport to better fit the mesh geometry.  
+To select a capsule, hover over the desired bone widget in the Autorigger UI.  Expand or collapse the sections with the arrow box next to the section heading to reduce clutter
 
 Getting the capsules to closely wrap the mesh surface will produce cleaner skin weights, particularly around the shoulders, hips, and neck where geometry is more complex.
 
